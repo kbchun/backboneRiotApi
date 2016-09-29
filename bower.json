@@ -1,0 +1,21 @@
+{
+  "name": "RiotAPI",
+  "version": "1.0.0",
+  "authors": [
+    "Alec Maliwanag, Kyle Chun"
+  ],
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.0.3",
+    "underscore": "~1.5.2",
+    "backbone": "~1.0.0"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

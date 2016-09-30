@@ -2,12 +2,14 @@
 var LibraryEntryView = Backbone.View.extend({
 
   tagName: 'tr',
-
-  template: _.template('<td>(<%= artist %>)</td><td><%= title %></td>'),
+  // SHOULD BE DISPLAYING GAME TITLES: SUMMONER, CHAMP, KDA
+  // template1: _.template('<td>Win? <%= win %></td>'),
+  // template2: _.template('<td>Game Type: <%= subType %>, <%= gameMode %></td>'),
+  template: _.template('<td>Champion: <%= champion %>, K/D/A: <%= kills %>/<%= deaths %>/<%= assists %></td>'),
 
   events: {
     'click': function() {
-      this.model.enqueue();
+      this.model.display();
     }
   },
 

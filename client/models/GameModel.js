@@ -8,5 +8,9 @@ var GameModel = Backbone.Model.extend({
 
   add: function() {
     this.trigger('add', this);
+  },
+  
+  display: function() {
+    this.trigger('display', this);
   }
 });

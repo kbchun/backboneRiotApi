@@ -3,7 +3,7 @@
   <body>
     <!-- Scripts may be placed anywhere on a page. But FYI, they block rendering of elements
      below them until after the scripts load-->
-    <br />
+<!--     <br />
     <input id="theKey" />
       <br />Summoner Name
       <br />
@@ -12,14 +12,19 @@
       <br />
       <br />Summoner Level: <span id="sLevel"></span>
 
-      <br />Summoner ID: <span id="sID"></span> 
+      <br />Summoner ID: <span id="sID"></span>  -->
     <script src="bower_components/jquery/jquery.min.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
     <script src="bower_components/backbone/backbone.js"></script>
+    <script src="static_data/champData.js"></script>
     <script src="models/GameModel.js"></script>
     <script src="collections/Games.js"></script>
-    <!-- <script src = "env/config.js"></script> -->
+    <script src="views/LibraryView.js"></script>
+    <script src="views/LibraryEntryView.js"></script>
+    <script src="views/TargetView.js"></script>
 
+    <script src="models/AppModel.js"></script>
+    <script src="views/AppView.js"></script>
 
     <script>
 
@@ -28,13 +33,16 @@
     $(function() {
       // set up model objects
       var library = new Games();
-      // var app = new AppModel({library: library});
+      window.setTimeout(function(){
+        var app = new AppModel({library: library});
+        // debugger;
+        // build a view for the top level of the whole app
+        var appView = new AppView({model: app});
 
-      // build a view for the top level of the whole app
-      // var appView = new AppView({model: app});
-
-      // put the view onto the screen
-      // $('body').append(appView.render());
+        // put the view onto the screen
+        $('body').append(appView.render());
+        
+      }, 1000);
     });
     </script>
   </body>
